@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.3.2 (Linux)"/>
+	<meta name="created" content="2020-03-28T13:40:34.105263372"/>
+	<meta name="changed" content="2020-04-12T18:14:33.255475032"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		h3 { margin-top: 0.1in; margin-bottom: 0.08in; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Sans", sans-serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "Noto Sans CJK SC"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Lohit Devanagari"; font-size: 14pt; font-weight: bold }
+		td p { background: transparent }
+		h2 { margin-top: 0.14in; margin-bottom: 0.08in; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC"; font-size: 16pt; font-weight: bold }
+		h2.ctl { font-family: "Lohit Devanagari"; font-size: 16pt; font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p lang="pt-BR" align="center" style="margin-top: 0.17in; margin-bottom: 0.08in; line-height: 100%; page-break-after: avoid">
+<font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>Projeto
+AutoBot com Arduino Uno</b></font></font></p>
+<h2 lang="pt-BR" class="western">O que é o Projeto AutoBot com
+Arduino Uno?</h2>
+<p lang="pt-BR">O projeto Autobot consiste na montagem de um
+“robo-carrinho” que tem por finalidade se deslocar de forma
+autônoma pela casa, desviando automáticamente dos obstáculos que
+encontra pela frente, sendo acionado inicialmente quando “percebe”
+alguma presença por perto. A ideia inicial é que o Autobot após
+iniciar o movimento, pare depois de um período determinado, até que
+perceba alguma presença novamente à sua volta.</p>
+<h2 lang="pt-BR" class="western">Draft da montagem física</h2>
+<p lang="pt-BR"><img src="Projeto%20AutoBot%20Arduino%20Uno_html_eae4270d11ef2acd.gif" name="Shape1" alt="Shape1" align="left"/>
+<br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<h2 lang="pt-BR" class="western">Sobre o projeto</h2>
+<p lang="pt-BR">A idéia deste projeto é exercitar a programação e
+a lógica na criação do algorítmo de movimento do carro robô,
+Autobot, que nesta primeira versão, deverá reagir a movimentos ao
+seu redor e a obstáculos a sua frente, mudando sua tragetória e
+continuando a se movimentar por um determinado período de tempo.</p>
+<p lang="pt-BR">Outro ponto que quero propor aqui é a exploração
+da matemátca, geometria e física para a criação dos movimentos e
+reações do Autobot, que pretendo detalhar na criação da lógica
+de cada reação e movimento.</p>
+<p lang="pt-BR">É importante ressaltar que questões particulares do
+Arduino e da eletrônica envolvida em cada parte do projeto,
+utilizarei a solução de outras pessoas que pesquisei na Internet,
+que darei o crédito aqui a cada um deles, que é o que se espera em
+um projeto Open Source.</p>
+<h3 lang="pt-BR" class="western"> O carro e seus movimetos</h3>
+<p lang="pt-BR">Neste momento ainda não é um robô, é apenas um
+carro, por este motivo aqui o chamamos ainda de carro. O carro foi
+montado com um kit para Arduíno facilmente encontrado na Internet,
+ele possui uma base (chassis em acrílico com papelão) 2 motores de
+Corrente Contínua (JGA25-370 6V-77RPM), duas Rodas com Pneu. Nas
+fotos abaixo, a base possui uma placa Protoboard colada na parte
+superior.</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="85*"/>
+
+	<col width="85*"/>
+
+	<col width="85*"/>
+
+	<tr valign="top">
+		<td width="33%" style="background: transparent" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p lang="pt-BR" align="left" style="font-style: normal; font-weight: normal; text-decoration: none">
+			<img src="Projeto%20AutoBot%20Arduino%20Uno_html_7077d76c945d7411.jpg" name="Image1" align="left" width="229" height="172" border="0"/>
+<br/>
+
+			</p>
+		</td>
+		<td width="33%" style="background: transparent" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p lang="pt-BR" align="left" style="font-style: normal; font-weight: normal; text-decoration: none">
+			<img src="Projeto%20AutoBot%20Arduino%20Uno_html_7773663e7d33571b.jpg" name="Image2" align="left" width="226" height="170" border="0"/>
+<br/>
+
+			</p>
+		</td>
+		<td width="33%" style="background: transparent" style="border: 1px solid #000000; padding: 0.04in"><p lang="pt-BR" align="left" style="font-style: normal; font-weight: normal; text-decoration: none">
+			<img src="Projeto%20AutoBot%20Arduino%20Uno_html_19d32345170a5fde.jpg" name="Image3" align="left" width="226" height="170" border="0"/>
+<br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<h3 class="western">Sequência de Eventos</h3>
+<p>Em um <i><b>Momento_0</b></i>, o carro está parado com o sensor
+de movimento posicionado na parte superior do carro em modo “Down”,
+até que o sensor perceba algum movimento em sua área de
+abrangência, quando o mesmo muda seu estado para “UP” iniciando
+o <i><b>Momento_1</b></i> e por sua ver inicia uma contagem de
+“<i><b>Tempo_Acordado</b></i>” até que o mesmo acabe e o sensor
+volte para o estado “Down” <i><b>Momento_0</b></i> novamente.</p>
+<h3 class="western">Teste inicial do Sensor de movimento</h3>
+<p><font face="Liberation Serif, serif">O Sensor de movimentos
+próximos ao Autobot se dará atravéz da instalação de um PIR
+<font size="3" style="font-size: 12pt">(</font><span style="font-variant: normal"><font color="#414141"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Passive
+Infrared Sensor), </span></span></span></font></font></span><span style="font-variant: normal"><font color="#414141"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">para
+este caso utilizo um Mini PIR, conhecido como Grove.</span></span></span></font></font></span></font></p>
+<p>Teste realizado com base neste vídeo para o sensor:</p>
+<p>Grove – Mini PIR Motion Sensor 
+</p>
+<p><a href="https://www.evelta.com/grove-mini-pir-motion-sensor-gd-seeed-studio/">https://www.evelta.com/grove-mini-pir-motion-sensor-gd-seeed-studio/</a></p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">#define
+PIR_Sensor_Mov 2 //Usando o pin2 para receber o sinal de movimento</font></font></p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">int
+tempo_Sensor_Mov=20000; //20 segundos</font></font></p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">void
+setup()</font></font></p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">{</font></font></p>
+<p>  <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">pinMode(PIR_Sensor_Mov,INPUT);</font></font></p>
+<p>  <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">Serial.begin(9600);</font></font></p>
+<p>  
+</p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">}</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">void
+loop()</font></font></p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">{</font></font></p>
+<p>    <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">if(digitalRead(PIR_Sensor_Mov))//Se
+detecta algum movimento...</font></font></p>
+<p>    <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">{</font></font></p>
+<p>      <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">Serial.println(&quot;Tem
+alguém perto&quot;);</font></font></p>
+<p>      <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">delay(tempo_Sensor_Mov);</font></font></p>
+<p>    <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">}</font></font></p>
+<p>  <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">else</font></font></p>
+<p>  <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">{</font></font></p>
+<p>    <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">Serial.println(&quot;Esperando&quot;);</font></font></p>
+<p>  <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">}</font></font></p>
+<p> <font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">delay(200);
+  </font></font>
+</p>
+<p><font face="FreeMono, monospace"><font size="1" style="font-size: 8pt">}</font></font></p>
+<h3 class="western">Detecção de Obstáculo</h3>
+<p lang="pt-BR">Para Detecção de Obstáculos usaremos o Sensor
+Ultrasônico de Distância HC-SR04</p>
+<p lang="pt-BR">O Teste realizado com este sensor foi realizado com
+base no código descrito no site Vida de Silício:</p>
+<p lang="pt-BR"><a href="https://portal.vidadesilicio.com.br/hc-sr04-sensor-ultrassonico/">https://portal.vidadesilicio.com.br/hc-sr04-sensor-ultrassonico/</a></p>
+<p lang="pt-BR">Aqui o código combinado dos dois sensores, o de
+Presença e o de distância:</p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">#define
+PIR_Sensor_Mov 2 //Usando o pin2 para receber o sinal de movimento</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">int
+qt_mov;</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//Leitura
+de distância com o sensor HC-SR04</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">#include
+&lt;Ultrasonic.h&gt;</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Ultrasonic
+ultrassom(8,7); // define o nome do sensor(ultrassom)</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//e
+onde esta ligado o trig(8) e o echo(7) respectivamente</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">int
+distancia;</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">void
+setup()</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">{</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">pinMode(PIR_Sensor_Mov,INPUT);</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Serial.begin(9600);</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">qt_mov=0;</font></font></p>
+<p lang="pt-BR">  
+</p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">}</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">void
+loop()</font></font></p>
+<p lang="pt-BR"><font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">{</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">if(digitalRead(PIR_Sensor_Mov))//Se
+detecta algum movimento...</font></font></p>
+<p lang="pt-BR">    <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">{</font></font></p>
+<p lang="pt-BR">      <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//Serial.println(&quot;Tem
+alguém perto&quot;);</font></font></p>
+<p lang="pt-BR">       <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">qt_mov=0;</font></font></p>
+<p lang="pt-BR">      <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">do{</font></font></p>
+<p lang="pt-BR">      <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">distancia
+= ultrassom.Ranging(CM);// ultrassom.Ranging(CM) retorna a distancia
+em</font></font></p>
+<p lang="pt-BR">                                     <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//
+centímetros(CM) ou polegadas(INC)</font></font></p>
+<p lang="pt-BR">                                     
+</p>
+<p lang="pt-BR">       <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">if(distancia
+&gt; 15)         </font></font>
+</p>
+<p lang="pt-BR">        <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">{</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//Serial.print(distancia);</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Serial.print(&quot;Movimento
+para frente\n&quot;);</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Serial.print(qt_mov);</font></font></p>
+<p lang="pt-BR">        <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">}
+</font></font>
+</p>
+<p lang="pt-BR">        <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">else</font></font></p>
+<p lang="pt-BR">        <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">{</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//Serial.print(distancia);</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">//Serial.print(&quot;Perto!\n&quot;);</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Serial.print(&quot;Muda
+direção\n&quot;);</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Serial.print(qt_mov);</font></font></p>
+<p lang="pt-BR">          <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">qt_mov++;</font></font></p>
+<p lang="pt-BR">        <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">}</font></font></p>
+<p lang="pt-BR">      <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">}
+while (qt_mov&lt;=10); </font></font>
+</p>
+<p lang="pt-BR">     <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">}</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">else</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">{</font></font></p>
+<p lang="pt-BR">    <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">Serial.println(&quot;Esperando&quot;);</font></font></p>
+<p lang="pt-BR">  <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">}
+ </font></font>
+</p>
+<p lang="pt-BR"> <font face="FreeMono, monospace"><font size="2" style="font-size: 9pt">delay(200);</font></font></p>
+<h3 class="western">Movimentos do carro</h3>
+<p lang="pt-BR">Para ser um carro ele deverá se movimentar e os
+movimentos que iremos prever para ele serão os seguintes:</p>
+<p lang="pt-BR">Para Frente (óbvio), para Trás, Virar Para a
+Direita (Horário) e Virar Para a Esquerda (Anti-Horário).</p>
+<p lang="pt-BR">Aqui irei descrever os movimentos, inicialmente sem
+mencionar como ocorrerá a programação no Arduino, que irei
+descrever mais a frente. A descrição dos movimentos irá nos
+auxiliar na programação das funções de acionamento de cada
+movimento pelo Arduino.</p>
+<h3 lang="pt-BR" class="western">Movimento para Frente</h3>
+<p lang="pt-BR">No movimento <i><b>Para Frente</b></i> o carro deverá
+girar as rodas através do acionamento dos motores, sendo que <i><b>as
+rodas girem em sentidos opostos</b></i> em relação ao sentido do
+relógio, ou seja, enquanto a roda do lado direito gira no sentido
+Anti-Horário, a roda do lado esquerdo, gira no sentido Horário. 
+</p>
+<p lang="pt-BR"><img src="Projeto%20AutoBot%20Arduino%20Uno_html_10f149ca4e2048f7.png" name="Image4" align="left" width="308" height="217" border="0"/>
+No
+motor de Corrente contínua isso pode ser obtido fazendo com que <i><b>um
+dos motores</b></i> seja acionado com a <i><b>polaridade normal</b></i>,
+enquanto <i><span style="text-decoration: none"><b>o outro com a
+polaridade invertida.</b></span></i></p>
+<p lang="pt-BR">Conforme mostra a imagem ao lado.</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<h3 lang="pt-BR" class="western">Movimento para <font face="Liberation Sans, sans-serif"><font size="4" style="font-size: 14pt"><b>Trás</b></font></font></h3>
+<p lang="pt-BR">No movimento <i><b>Para T</b></i><i><b>rás</b></i> a
+lógica será a mesma do movimento para Frente, com a diferença que
+o movimento das rodas será invertido, ou seja, enquanto a <i><b>roda
+do lado direito gira no sentido Horário</b></i>, a roda do <i><b>lado
+esquerdo, gira no sentido Anti-Horário</b></i>. 
+</p>
+<p lang="pt-BR"><img src="Projeto%20AutoBot%20Arduino%20Uno_html_362e5456f3dba79c.png" name="Image7" align="left" width="311" height="210" border="0"/>
+No
+motor de Corrente contínua isso pode ser obtido fazendo com que <i><b>um
+dos motores</b></i> seja acionado com a <i><b>polaridade normal</b></i>,
+enquanto <i><b>o outro com a polaridade invertida.</b></i></p>
+<p lang="pt-BR">Conforme mostra a imagem ao lado.</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<h3 class="western">Virar Para a Direita (Horário)</h3>
+<p><span lang="pt-BR">No movimento </span><span lang="pt-BR"><i><b>V</b></i></span><span lang="pt-BR"><i><b>irar
+Para a Direita</b></i></span><span lang="pt-BR"> o carro deverá
+girar as rodas através do acionamento dos motores, sendo que </span><span lang="pt-BR">as
+rodas girem </span><span lang="pt-BR">ambas no mesmo </span><span lang="pt-BR">sentido
+em relação ao sentido do relógio, ou seja, </span><span lang="pt-BR"><i><b>ambas
+as rodas</b></i></span><span lang="pt-BR"> giram no </span><span lang="pt-BR"><i><b>sentido
+</b></i></span><span lang="pt-BR"><i><b>Anti-Horário</b></i></span><span lang="pt-BR">.</span></p>
+<p><img src="Projeto%20AutoBot%20Arduino%20Uno_html_abcced2f78ffca3e.png" name="Image8" align="left" width="311" height="213" border="0"/>
+<span lang="pt-BR">No
+motor de Corrente contínua isso pode ser obtido fazendo com que
+</span><span lang="pt-BR">ambos </span><span lang="pt-BR">os motores
+seja acionado com a </span><span lang="pt-BR"><i><b>polaridade
+</b></i></span><span lang="pt-BR"><i><b>invertida</b></i></span><span lang="pt-BR">.</span></p>
+<p lang="pt-BR">Conforme mostra a imagem ao lado.</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<h3 class="western">Virar Para a <font face="Liberation Sans, sans-serif"><font size="4" style="font-size: 14pt"><b>Esquerda</b></font></font>
+(Anti-Horário)</h3>
+<p><span lang="pt-BR">No movimento </span><span lang="pt-BR"><i><b>V</b></i></span><span lang="pt-BR"><i><b>irar
+Para a E</b></i></span><span lang="pt-BR"><i><b>squerda </b></i></span><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">a
+lógica será a mesma do movimento</span></span></span><span lang="pt-BR">
+</span><span lang="pt-BR">Virar a Direita, </span><span lang="pt-BR">com
+a diferença que o movimento das rodas será invertido, ou seja,</span><span lang="pt-BR">
+ as rodas girem ambas no mesmo sentido  em relação ao sentido do
+relógio, ou seja, </span><span lang="pt-BR"><i><b>ambas as rodas</b></i></span><span lang="pt-BR">
+giram no </span><span lang="pt-BR"><i><b>sentido </b></i></span><span lang="pt-BR"><i><b>Horário</b></i></span><span lang="pt-BR">.</span><span lang="pt-BR">
+</span>
+</p>
+<p><img src="Projeto%20AutoBot%20Arduino%20Uno_html_32dc4c8d1d3ed236.png" name="Image5" align="left" width="308" height="211" border="0"/>
+<span lang="pt-BR">No
+motor de Corrente contínua isso pode ser obtido fazendo com que
+ambos os motores seja acionado com a </span><span lang="pt-BR"><i><b>polaridade
+n</b></i></span><span lang="pt-BR"><i><b>ormal</b></i></span><span lang="pt-BR">.</span></p>
+<p lang="pt-BR">Conforme mostra a imagem ao lado.</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<p lang="pt-BR"><br/>
+<br/>
+
+</p>
+<h3 class="western">Virando o carro, <font face="Liberation Sans, sans-serif"><font size="4" style="font-size: 14pt"><b>e</b></font></font>
+o tempo de acionamento dos motores.</h3>
+<p>Quando pretendemos realizar o movimento de “virar” que na
+verdade será “Girar” o carro em um ângulo de <font size="3" style="font-size: 12pt">90°
+sobre seu eixo.</font></p>
+<p><font size="3" style="font-size: 12pt">P</font><font size="3" style="font-size: 12pt">ara
+este cálculo temos que calcular primeiro o </font><font size="3" style="font-size: 12pt">comprimentro
+ou </font><font size="3" style="font-size: 12pt">perímetro da
+circunferência da roda, que possui Diâmetro de 65mm</font></p>
+<p><img src="Projeto%20AutoBot%20Arduino%20Uno_html_47f28cd00aa963e1.png" name="Image9" align="left" width="289" height="158" border="0"/>
+
+<font size="3" style="font-size: 12pt">d = Diâmetro, C_</font><font size="3" style="font-size: 12pt">roda</font><font size="3" style="font-size: 12pt">
+= Comprimento</font></p>
+<p> 
+<img src="Projeto%20AutoBot%20Arduino%20Uno_html_a2f1a70bace905b2.gif" name="Object1" hspace="8" width="115" height="19"/>
+
+C = 65*3.14.15926535…</p>
+<p>   C_roda = 204.20mm</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><img src="Projeto%20AutoBot%20Arduino%20Uno_html_f39e3d1b2d8202b5.png" name="Image6" align="left" width="355" height="219" border="0"/>
+Ou
+seja, para cada volta que a roda dá, ela percorre 204mm ~ 20,4cm. 
+</p>
+<p>A pergunta é: Quanto a roda tem que girar para que o eixo do
+carro tenha um giro de <font size="3" style="font-size: 12pt">90°?</font></p>
+<p><font size="3" style="font-size: 12pt">N</font><font size="3" style="font-size: 12pt">a
+figura ao lado existe a medida de Centro a Centro de cada roda, que é
+de 17cm, ou seja na Circunferência que temos de percorrer ¼ de
+volta, </font><font size="3" style="font-size: 12pt">90°, </font><font size="3" style="font-size: 12pt">possui
+um Diâmetro de 17cm. </font>
+</p>
+<p><font size="3" style="font-size: 12pt">Portanto devemos descobrir
+qual é a distância que deve ser percorrida pela roda para percorrer
+o semicírculo de </font><font size="3" style="font-size: 12pt">90°?</font></p>
+<p><font size="3" style="font-size: 12pt">E</font><font size="3" style="font-size: 12pt">ste
+é novamente o calculo do Comprimento da Circinferência de Diâmetro
+17cm, só que desta vez como iremos percorrer apenas </font><font size="3" style="font-size: 12pt">90°,
+</font><font size="3" style="font-size: 12pt">dividiremos o resultado
+por 4, pois como sabemos (espero que sim) que a Circunferência
+possui 360</font><font size="3" style="font-size: 12pt">°.</font></p>
+<p><img src="Projeto%20AutoBot%20Arduino%20Uno_html_47f28cd00aa963e1.png" name="Image10" align="left" width="289" height="158" border="0"/>
+
+<font size="3" style="font-size: 12pt">d = Diâmetro, C = Comprimento</font></p>
+<p> 
+<img src="Projeto%20AutoBot%20Arduino%20Uno_html_a2f1a70bace905b2.gif" name="Object2" hspace="8" width="115" height="19"/>
+
+C = 170*3.14.15926535…</p>
+<p>   <font size="3" style="font-size: 12pt">C = 5</font><font size="3" style="font-size: 12pt">34.07</font><font size="3" style="font-size: 12pt">mm</font></p>
+<p>   <font size="3" style="font-size: 12pt">C/4 </font><font size="3" style="font-size: 12pt">=
+D_quarto_v</font><font size="3" style="font-size: 12pt"> = 133,51mm</font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><font size="3" style="font-size: 12pt">M</font><font size="3" style="font-size: 12pt">uito
+bem, agora sabemos que para “Girar” o carro em </font><font size="3" style="font-size: 12pt">90°,
+</font><font size="3" style="font-size: 12pt">precisamos </font><font size="3" style="font-size: 12pt"><i><b>percorrer
+133,51mm </b></i></font><font size="3" style="font-size: 12pt">com
+uma roda que a </font><font size="3" style="font-size: 12pt"><i><b>cada
+volta percorre 204,20mm.</b></i></font></p>
+<p style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt">O
+problema é que nosso motor de Corrente Contínua não vai nos dizer
+quantas voltas está dando, a única coisa que podemos fazer neste
+caso é </font><font size="3" style="font-size: 12pt"><i><b>inferir</b></i></font><font size="3" style="font-size: 12pt">
+quanto </font><font size="3" style="font-size: 12pt"><i><b>tempo </b></i></font><font size="3" style="font-size: 12pt">este
+motor deve permanecer ligado para garantir que a roda gire apenas
+</font><font size="3" style="font-size: 12pt"><i><b>percorrendo a
+distância</b></i></font><font size="3" style="font-size: 12pt"> que
+queremos.</font></p>
+<p><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal">Como
+informei no início estes são motores de Corrente Contínua do tipo
+</span></span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">(JGA25-370
+6V-77RPM), </span></span></span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">então
+sabemos que cada motor deve girar a uma velocidade de 77RPM (Rotações
+por minuto), ou seja, 1 Minuto = 60 segundos, este motor vai fazer
+nossa roda girar 1,</span></span></span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">2833</span></span></span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">
+vezes a cada segundo. </span></span></span></font>
+</p>
+<p lang="pt-BR" style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt">E
+já sabemos que a cada volta a roda percorre 204,20mm, isso nos leva
+a conclusão que a cada segundo, nossa roda irá percorrer:</font></p>
+<p style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt"><span lang="pt-BR">C_roda
+* </span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR">Rotação
+do motor</span></font></p>
+<p lang="pt-BR" style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt">Distância
+percorrida pela roda por segundo = 204,20mm * 1,2833/s =
+262,04986mm/s</font></p>
+<p lang="pt-BR" style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt">Para
+percorrermos 1/4 de volta devemos percorrer a distância que
+descobrimos acima:</font></p>
+<p><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">D_quarto_v</span></span></span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">
+= 133,51mm</span></span></span></font></p>
+<p><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">P</span></span></span></font><font size="3" style="font-size: 12pt"><span lang="pt-BR"><span style="font-style: normal"><span style="font-weight: normal">ara
+isso usaremos a regra de 3, onde:</span></span></span></font></p>
+<p lang="pt-BR" style="font-style: normal; font-weight: normal"><img src="Projeto%20AutoBot%20Arduino%20Uno_html_9586c77c6f713772.gif" name="Object3" hspace="8" width="133" height="19"/>
+</p>
+<p style="font-style: normal; font-weight: normal"><img src="Projeto%20AutoBot%20Arduino%20Uno_html_6fffdec5c414c4f2.gif" name="Object4" hspace="8" width="134" height="19"/>
+</p>
+<p style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt">x=(1*133,51)
+/ 204,20</font></p>
+<p style="font-style: normal; font-weight: normal"><font size="3" style="font-size: 12pt">x=
+0,6538s</font></p>
+<p style="font-style: normal; font-weight: normal"><br/>
+<br/>
+
+</p>
+</body>
+</html>
